@@ -1,0 +1,10 @@
+[package]
+name = "en"
+version = "0.1.0"
+authors = ["Brainium Studios LLC"]
+edition = "2018"
+repository = "https://github.com/BrainiumLLC/en"
+license = "MIT"
+
+[dependencies]
+num-traits = "0.2.11"
