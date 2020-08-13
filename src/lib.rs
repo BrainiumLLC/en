@@ -19,7 +19,9 @@ pub fn cast<T: num_traits::NumCast, U: Copy + Debug + num_traits::ToPrimitive>(n
     T::from(n).unwrap_or_else(move || cast_num_fail::<T, U>(n))
 }
 
-pub trait Num: Copy + Debug + Max + Min + num_traits::Num + num_traits::NumCast + num_traits::NumRef {
+pub trait Num:
+    Copy + Debug + Max + Min + num_traits::Num + num_traits::NumCast + num_traits::NumRef
+{
     fn two() -> Self {
         cast(2)
     }
@@ -49,7 +51,10 @@ pub trait Num: Copy + Debug + Max + Min + num_traits::Num + num_traits::NumCast 
     }
 }
 
-impl<T> Num for T where T: Copy + Debug + Max + Min + num_traits::Num + num_traits::NumCast + num_traits::NumRef {}
+impl<T> Num for T where
+    T: Copy + Debug + Max + Min + num_traits::Num + num_traits::NumCast + num_traits::NumRef
+{
+}
 
 pub trait Float: num_traits::Float + num_traits::FloatConst + Num {}
 impl<T> Float for T where T: num_traits::Float + num_traits::FloatConst + Num {}
