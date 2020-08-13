@@ -3,8 +3,13 @@ name = "en"
 version = "0.1.0"
 authors = ["Brainium Studios LLC"]
 edition = "2018"
+description = "The easiest numeric traits."
+documentation = "https://docs.rs/en"
 repository = "https://github.com/BrainiumLLC/en"
-license = "MIT"
+readme = "README.md"
+keywords = ["math", "mathematics", "numerics"]
+categories = ["rust-patterns"]
+license = "Apache-2.0/MIT"
 
 [dependencies]
-num-traits = "0.2.11"
+num-traits = "0.2.12"
