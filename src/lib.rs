@@ -2,6 +2,7 @@ mod max;
 mod min;
 
 pub use self::{max::Max, min::Min};
+pub use num_traits;
 
 use std::{any::type_name, fmt::Debug};
 
