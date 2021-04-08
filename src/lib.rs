@@ -1,24 +1,11 @@
+mod cast;
 mod max;
 mod min;
 
-pub use self::{max::Max, min::Min};
+pub use self::{cast::*, max::Max, min::Min};
 pub use num_traits;
 
-use std::{any::type_name, fmt::Debug};
-
-#[cold]
-fn cast_num_fail<T, U: Debug>(value: U) -> ! {
-    panic!(
-        "cast failed: value {:?} of type `{}` could not be represented by type `{}`",
-        value,
-        type_name::<U>(),
-        type_name::<T>(),
-    )
-}
-
-pub fn cast<T: num_traits::NumCast, U: Copy + Debug + num_traits::ToPrimitive>(n: U) -> T {
-    T::from(n).unwrap_or_else(move || cast_num_fail::<T, U>(n))
-}
+use std::fmt::Debug;
 
 pub trait Num:
     Copy + Debug + Max + Min + num_traits::Num + num_traits::NumCast + num_traits::NumRef

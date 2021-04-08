@@ -1,5 +1,9 @@
 # Unreleased
 
+# 0.1.2 (2021-04-08)
+
+- Added `try_cast` function for those who wish to live less dangerously.
+
 # 0.1.1 (2020-09-08)
 
 - Re-export `num_traits`.
