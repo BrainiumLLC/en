@@ -1,9 +1,16 @@
-use std::fmt::{Debug, Display};
+use std::fmt::Debug;
 
-#[derive(Debug)]
 pub struct CastFailure<T, U: Debug> {
     value: U,
     _marker: std::marker::PhantomData<T>,
+}
+
+impl<T, U: Debug> Debug for CastFailure<T, U> {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        f.debug_struct("CastFailure")
+            .field("value", &self.value)
+            .finish()
+    }
 }
 
 impl<T, U: Debug> From<U> for CastFailure<T, U> {
@@ -15,7 +22,7 @@ impl<T, U: Debug> From<U> for CastFailure<T, U> {
     }
 }
 
-impl<T, U: Debug> Display for CastFailure<T, U> {
+impl<T, U: Debug> std::fmt::Display for CastFailure<T, U> {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(
             f,
@@ -26,6 +33,8 @@ impl<T, U: Debug> Display for CastFailure<T, U> {
         )
     }
 }
+
+impl<T, U: Debug> std::error::Error for CastFailure<T, U> {}
 
 impl<T, U: Debug> CastFailure<T, U> {
     #[cold]

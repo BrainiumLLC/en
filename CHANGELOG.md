@@ -1,5 +1,9 @@
 # Unreleased
 
+# 0.1.3 (2021-04-08)
+
+- Implement `std::error::Error` for `CastFailure`.
+
 # 0.1.2 (2021-04-08)
 
 - Added `try_cast` function for those who wish to live less dangerously.
