@@ -18,6 +18,62 @@ pub trait Num:
         cast(self)
     }
 
+    fn to_i8(self) -> i8 {
+        self.cast()
+    }
+
+    fn to_i16(self) -> i16 {
+        self.cast()
+    }
+
+    fn to_i32(self) -> i32 {
+        self.cast()
+    }
+
+    fn to_i64(self) -> i64 {
+        self.cast()
+    }
+
+    fn to_i128(self) -> i128 {
+        self.cast()
+    }
+
+    fn to_isize(self) -> isize {
+        self.cast()
+    }
+
+    fn to_u8(self) -> u8 {
+        self.cast()
+    }
+
+    fn to_u16(self) -> u16 {
+        self.cast()
+    }
+
+    fn to_u32(self) -> u32 {
+        self.cast()
+    }
+
+    fn to_u64(self) -> u64 {
+        self.cast()
+    }
+
+    fn to_u128(self) -> u128 {
+        self.cast()
+    }
+
+    fn to_usize(self) -> usize {
+        self.cast()
+    }
+
+    fn to_f32(self) -> f32 {
+        self.cast()
+    }
+
+    fn to_f64(self) -> f64 {
+        self.cast()
+    }
+
     fn two() -> Self {
         cast(2)
     }

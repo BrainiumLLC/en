@@ -1,5 +1,9 @@
 # Unreleased
 
+# 0.1.5 (2021-04-27)
+
+- Added `to_*` casting convenience methods to `Num`.
+
 # 0.1.4 (2021-04-27)
 
 - Added provided `try_cast` and `cast` convenience methods to `Num`.
