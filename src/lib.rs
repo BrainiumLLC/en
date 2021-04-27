@@ -10,6 +10,14 @@ use std::fmt::Debug;
 pub trait Num:
     Copy + Debug + Max + Min + num_traits::Num + num_traits::NumCast + num_traits::NumRef
 {
+    fn try_cast<T: num_traits::NumCast>(self) -> Result<T, CastFailure<T, Self>> {
+        try_cast(self)
+    }
+
+    fn cast<T: num_traits::NumCast>(self) -> T {
+        cast(self)
+    }
+
     fn two() -> Self {
         cast(2)
     }

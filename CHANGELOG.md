@@ -1,5 +1,9 @@
 # Unreleased
 
+# 0.1.4 (2021-04-27)
+
+- Added provided `try_cast` and `cast` convenience methods to `Num`.
+
 # 0.1.3 (2021-04-08)
 
 - Implement `std::error::Error` for `CastFailure`.
